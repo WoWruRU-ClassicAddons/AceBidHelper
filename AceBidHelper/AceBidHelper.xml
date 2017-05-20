@@ -22,8 +22,8 @@
 				AceBidHelper:MinimapButton_OnLeave();
 			</OnLeave>
 		</Scripts>
-		<NormalTexture file="Interface\AddOns\AceBidHelper\AceBidHelperButton"/>
-		<PushedTexture file="Interface\AddOns\AceBidHelper\AceBidHelperButtonDown"/>
+		<NormalTexture file="Interface\AddOns\AceBidHelper\Images\AceBidHelperButton"/>
+		<PushedTexture file="Interface\AddOns\AceBidHelper\Images\AceBidHelperButtonDown"/>
 		<DisabledTexture file="Interface\Minimap\UI-Minimap-ZoomOutButton-Disabled"/>
 		<HighlightTexture alphaMode="ADD" file="Interface\Minimap\UI-Minimap-ZoomButton-Highlight"/>
 	</Button>

@@ -1,10 +1,15 @@
 ## Interface: 11100
-## Author: hshh
-## Title: AceBidHelper
+## Title: AceBidHelper |cff7fff7f -Ace-|r
 ## Notes: Track Successful and Failed Bid Records
+## Notes-ruRU: Возможность проследить за ставками на аукционе
+## Author: hshh
+## Version: 0.2
 ## SavedVariables: AceBidHelperDB
-## Dependencies: Ace
-AceBidHelper_Locals.zhcn.lua
-AceBidHelper_Locals.lua
+## Dependencies: !Libs
+
+Locale\AceBidHelper_Locals.ruru.lua
+Locale\AceBidHelper_Locals.zhcn.lua
+Locale\AceBidHelper_Locals.lua
+
 AceBidHelper.lua
 AceBidHelper.xml

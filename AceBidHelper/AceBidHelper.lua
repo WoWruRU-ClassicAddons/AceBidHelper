@@ -1,5 +1,5 @@
 AceBidHelper = AceAddon:new({
-        name          = AceBidHelperLocals.NAME,
+        name          = "AceBidHelper",
         description   = AceBidHelperLocals.DESCRIPTION,
         version       = "0.2",
         releaseDate   = "04-17-2006",
@@ -9,12 +9,22 @@ AceBidHelper = AceAddon:new({
         website       = "http://www.hshh.org",
         category      = "others",
         db            = AceDatabase:new("AceBidHelperDB"),
-        cmd           = AceChatCmd:new(AceBidHelperLocals.COMMANDS, AceBidHelperLocals.CMD_OPTIONS),
+        cmd           = AceChatCmd:new({"/acebidhelper", "/abh"}, AceBidHelperLocals.CMD_OPTIONS),
 		keepRecords   = 60*60*12,
 		registerEvent = "CHAT_MSG_SYSTEM",
 		pos           = 10,
 })
 
+SUCCESSFUL_MESSAGES = {
+	TEXT(ERR_AUCTION_SOLD_S),
+	TEXT(ERR_AUCTION_WON_S)
+}
+
+FAILED_MESSAGES = {
+	TEXT(ERR_AUCTION_OUTBID_S),
+	TEXT(ERR_AUCTION_EXPIRED_S),
+	TEXT(ERR_AUCTION_REMOVED_S)
+}
 
 function AceBidHelper:Initialize()
 	local curtime = GetTime();
@@ -38,8 +48,8 @@ end
 
 function AceBidHelper:Enable()
 	self:RegisterEvent(self.registerEvent, "TrackMSG");
-	self.SUCCESSFUL_MESSAGES=self:ReFormatMSG(AceBidHelperLocals.SUCCESSFUL_MESSAGES);
-	self.FAILED_MESSAGES=self:ReFormatMSG(AceBidHelperLocals.FAILED_MESSAGES);
+	self.SUCCESSFUL_MESSAGES=self:ReFormatMSG(SUCCESSFUL_MESSAGES);
+	self.FAILED_MESSAGES=self:ReFormatMSG(FAILED_MESSAGES);
 	self:MinimapLoc(self.db:get("pos"));
 end
 

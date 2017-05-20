@@ -1,42 +1,40 @@
-if( not ace:LoadTranslation("AceBidHelper") ) then
+function AceBidHelper_Locals_zhCN ()
 
 AceBidHelperLocals = {
-	NAME = "AceBidHelper",
-	DESCRIPTION = "Track Successful and Failed Bid Records.",
-	COMMANDS = {"/acebidhelper", "/abh"},
+	DESCRIPTION = "跟踪成功或失败的拍卖纪录.",
 	CMD_OPTIONS = {
 		{
 			option  = "list",
-			desc	= "List AceBidHelper Records. (successful or failed)",
+			desc	= "列出所有拍卖纪录. (successful 或 failed)",
 			method	= "ListAll",
 			args	= {
 				{
 					option  = "successful",
-					desc	= "List successful records.",
+					desc	= "列出成功拍卖纪录.",
 					method  = "ListSuccessful"
 				},
 				{
 					option  = "failed",
-					desc	= "List failed records.",
+					desc	= "列出失败拍卖纪录.",
 					method  = "ListFailed"
 				},
 			},
 		},
 		{
 			option  = "loc",
-			desc	= "Change Minimap Icon Location. (0-360)",
+			desc	= "更改小地图图标位置. (0-360)",
 			method	= "MinimapLoc",
 		},
 		{
 			option  = "reset",
-			desc	= "Reset All data.",
+			desc	= "重置所有数据.",
 			method	= "Reset",
 		},
 	},
 
 	TEXT = {
-		successful_records = "Successful Records:",
-		failed_records = "Failed Records:",
+		successful_records = "成功拍卖纪录:",
+		failed_records = "失败拍卖纪录:",
 	},
 
 	SUCCESSFUL_MESSAGES = {
